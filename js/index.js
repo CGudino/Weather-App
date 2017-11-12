@@ -12,20 +12,33 @@ $(document).ready(function() {
   } else {
     $('#location').text('Location not enabled.');
   }
-
+  
   function getWeather(lat, lon) {
     var jsonLink = api + lat + '&' + lon;
-
+    
     $.getJSON(jsonLink, function(json) {
       var tempC = Math.round(json.main.temp) + ' Celsius';
       var tempF = Math.round((json.main.temp * 9/5) + 32) + ' Fahrenheit';
-
+      
       $('#location').text(json.name);
-      $('#weather').text(tempF);
+      $('#weatherF').text(tempF);
+      $('#weatherC').text(tempC);
       $('#description').text(json.weather[0].main);
       $('#weather-icon').html("<img src='" + json.weather[0].icon + "' />");
     });
-
+    
+    $('#weatherC').hide();
   }
-
+  
 });
+
+// Change between F and C
+function changeTempF() {
+  $('#weatherF').show();
+  $('#weatherC').hide();
+}
+      
+function changeTempC() {
+  $('#weatherC').show();
+  $('#weatherF').hide();
+}
