@@ -44,8 +44,7 @@ hr {
 }
 
 footer {
-  float: right;
-  margin-right: 25%;
+  text-align: center;
   margin-top: 5%;
   margin-bottom: 5%;
 }
