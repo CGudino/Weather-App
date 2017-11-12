@@ -3,13 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Weather app</title>
-
-
   <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css'>
-
-      <link rel="stylesheet" href="css/style.css">
-
-
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -18,31 +13,29 @@
 <!--HTML starts here-->
 
 <div id='page'>
-
+  
 <div id="title">
   <span>Weather</span>
-  <img src='http://www.iconsdb.com/icons/preview/white/partly-cloudy-day-xxl.png' class='img-responsive' />
 </div>
-
+  
 <hr/>
 
 <div class ="row" id="weather-div">
   <div class="col-md-12" id="location"></div>
   <div class="col-md-12" id="weather-bar">
-    <span id="weather"></span>
+    <span id="weatherF"></span>
+    <span id="weatherC"></span>
     <span id="weather-icon"></span>
   </div>
   <div class="col-md-12" id="description">
   </div>
 </div>
-
+  
+  <div class="text-center">
+    <button class="btn" onclick='changeTempF()'>F</button>
+    <button class="btn" onclick='changeTempC()'>C</button>
+  </div>
+  
   <footer>Created by Cristian Gudiño</footer>
-
+  
 </div>
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/js/bootstrap.min.js'></script>
-
-    <script  src="js/index.js"></script>
-
-</body>
-</html>
