@@ -1,12 +1,12 @@
-var api = 'https://fcc-weather-api.glitch.me/api/current?';
-var lat = '';
-var lon = '';
+let api = 'https://fcc-weather-api.glitch.me/api/current?';
+let lat;
+let lon;
 
 $(document).ready(function() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(function(position) {
-      var lat = 'lat=' + position.coords.latitude;
-      var lon = 'lon=' + position.coords.longitude;
+      let lat = `lat=${position.coords.latitude}`;
+      let lon = `lon=${position.coords.longitude}`;
       getWeather(lat, lon);
     });
   } else {
@@ -14,17 +14,17 @@ $(document).ready(function() {
   }
   
   function getWeather(lat, lon) {
-    var jsonLink = api + lat + '&' + lon;
+    let jsonLink = `${api}${lat}&${lon}`;
     
     $.getJSON(jsonLink, function(json) {
-      var tempC = Math.round(json.main.temp) + ' Celsius';
-      var tempF = Math.round((json.main.temp * 9/5) + 32) + ' Fahrenheit';
+      let tempC = `${Math.round(json.main.temp)} Celsius`;
+      let tempF = `${Math.round((json.main.temp * 9/5) + 32)} Fahrenheit`;
       
       $('#location').text(json.name);
       $('#weatherF').text(tempF);
       $('#weatherC').text(tempC);
       $('#description').text(json.weather[0].main);
-      $('#weather-icon').html("<img src='" + json.weather[0].icon + "' />");
+      $('#weather-icon').html(`<img src='${json.weather[0].icon}' />`);
     });
     
     $('#weatherC').hide();
