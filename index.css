@@ -1,4 +1,12 @@
+@media screen and (max-width: 400px) {
+  body {
+    font-size: 75%;
+    height: 50%;
+  }
+}
+
 body {
+  background: linear-gradient(to right, rgb(74, 74, 189), rgb(76, 133, 187), rgb(51, 141, 201));
   background-color: lightblue;
   font-family: Copperplate, "Copperplate Gothic Light", fantasy;
   color: white;
@@ -7,25 +15,25 @@ body {
 #page {
   width: 75%;
   margin: auto;
-  border-radius: 10px;
   margin-top: 3%;
-  padding-bottom: 1%;
 }
 
 #title {
   width: 100%;
+  margin: auto;
   text-align: center;
   font-size: 300%;
   padding-top: 5%;
   font-weight: bold;
 }
 
-.img-responsive {
-  width: 8%;
+hr {
+  width: 80%;
 }
 
 #weather-div {
   width: 100%;
+  margin: auto;
   font-size: 200%;
   text-align: center;
 }
@@ -34,17 +42,24 @@ body {
   font-size: 120%;
 }
 
-#theButton {
-  margin-top: 10000px;
+#weather-icon {
+  width: 100%;
+  margin: auto;
   text-align: center;
 }
 
-hr {
-  width: 80%;
+#temp-buttons {
+  position: absolute;
+  left: 50%;
+  bottom: 25%;
+  transform: translateX(-50%);
 }
 
 footer {
+  font-size: 150%;
   text-align: center;
-  margin-top: 5%;
-  margin-bottom: 5%;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  transform: translateX(-50%);
 }
